@@ -1,5 +1,8 @@
 import java.lang.Math;
 
+
+//Cambiar por Number para valores más grandes
+
 /**
  * Montoya Montes Pedro
  * 
@@ -46,13 +49,15 @@ public class isPrime implements Runnable{
 		if(numPrimo < 2)							//Verificar si no es 0 o 1 el valor.
 			return false; 
 		
+		
+		
 		Runnable process = () -> {//Lambda para evitar hacer uso de run()
 			int idThread = Integer.valueOf(Thread.currentThread().getName()); //Obtenemos el número de hilo.
 
 			if(intervalLength*(idThread+1) <= numPrimo){//Para evitar salirnos del rango y hacer calculos inecesarios.
 
 				int interval = (intervalLength * idThread);
-				/** FOR: inicia en el primer valor de nuestro subIntervalor; acaba al final del mismo;aumenta i */
+				/** FOR: inicia en el primer valor de nuestro subIntervalor; acaba al final del mismo; aumenta i */
 				for(int i = interval; i < interval + intervalLength ; i++){  
 
 					if(i<2) 				//Quitamos el caso donde i es igual a cero, uno o dos.
